@@ -3,21 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CounterCompenent } from './counter/counter.component';
-import { HeroComponent } from './heroes/hero/hero.component';
-import { ListComponent } from './heroes/list/list.component';
+import { CounterModule } from './counter/components/counter.module';
+import { HeroModule } from './heroes/hero.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
     //* Declarar todos lo componentes que necesite
-    CounterCompenent,
-    HeroComponent,
-    ListComponent
+    AppComponent,
   ],
+  //! Los modulos siempre van en los imports
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CounterModule,
+    HeroModule
   ],
   providers: [],
   bootstrap: [AppComponent]

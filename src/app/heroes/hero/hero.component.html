@@ -1,17 +1,38 @@
 
 
-<h1>Spiderman</h1>
+<h1>{{ name }}</h1>
 
 <dl>
   <td>Nombre:</td>
-  <dd>nombre</dd>
+  <dd>{{ name }}</dd>
 
   <td>Edad:</td>
-  <dd>edad</dd>
+  <dd>{{age}}</dd>
 
   <td>Método:</td>
-  <dd>algún método</dd>
+  <!--! Dentro de los "{{}}" puedo agregar cualquier cosa -->
+  <dd>{{getHeroDescription()}}</dd>
 
   <td>Capitalizado</td>
-  <dd>nombre capitalizado</dd>
+  <dd> {{capitalizeName}}</dd>
 </dl>
+
+<button
+  *ngIf="name !== 'batman'"
+  (click)="changeHero()"
+  class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
+
+<button
+  *ngIf="age !== 45"
+  (click)="changeAge()"
+  class="btn btn-primary">
+  Cambiar edad
+</button>
+
+<button
+  (click)="resetHero()"
+  class="btn btn-primary mx-2">
+  Restablecer
+</button>
